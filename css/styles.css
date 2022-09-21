@@ -1,0 +1,92 @@
+* {
+    font-family: "Comic Sans MS", "Comic Sans";
+}
+
+.course {
+    margin-bottom: 5px;
+    color: rgb(187, 0, 0);
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.course:hover {
+    color: rgb(255, 0, 0);
+}
+
+h2 {
+    margin: 5px;
+}
+
+p {
+    margin: 6px;
+    font-size: 16pt;
+}
+
+.collapse:hover {
+    cursor: pointer;
+}
+
+/* Style the collapsible content. Note: hidden by default */
+.collapse-content {
+    display: none;
+    overflow: hidden;
+}
+
+/* The sidebar menu */
+.sidenav {
+    height: 100%;
+    /* Full-height: remove this if you want "auto" height */
+    width: 180px;
+    /* Set the width of the sidebar */
+    position: fixed;
+    /* Fixed Sidebar (stay in place on scroll) */
+    z-index: 1;
+    /* Stay on top */
+    top: 0;
+    /* Stay at the top */
+    left: 0;
+    background-color: #111;
+    /* Black */
+    overflow-x: hidden;
+    /* Disable horizontal scroll */
+    padding-top: 20px;
+}
+
+/* The navigation menu links */
+.sidenav a {
+    padding: 6px 8px 6px 20px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+
+/* Style page content */
+.main {
+    margin-left: 200px;
+    /* Same as the width of the sidebar */
+    padding: 0px 10px;
+}
+
+.title {
+    font-size: 30pt;
+    margin-top:30px;
+}
+
+.day {
+    color:rgb(4, 91, 221)
+}
+.day:hover {
+    color:rgb(19, 138, 250);
+    cursor:pointer;
+
+}
+
+.mobile-main {
+    margin:40px;
+    font-size: 30pt;
+}

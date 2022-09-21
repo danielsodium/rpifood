@@ -1,0 +1,20 @@
+<a onClick="show(this)" class="collapse course">
+    <h1>
+        <%= name %>
+    </h1>
+</a>
+<div class="collapse-content">
+    <hr>
+    <% Object.keys(courses).forEach(function(course) { %>
+        <h2 onClick="show(this)" class="collapse">
+            <%= course %>
+        </h2>
+        <div class="collapse-content">
+            <% courses[course].forEach(function(item) { %>
+                <p>
+                    <%= item %>
+                </p>
+                <% }); %>
+        </div>
+        <% }); %>
+</div>

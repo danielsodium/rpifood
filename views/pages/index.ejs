@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+
+<script>
+  function show(param) {
+
+    var content = param.nextElementSibling;
+    if (content.style.display === "block") {
+      content.style.display = "none";
+    } else {
+      content.style.display = "block";
+    }
+  }
+  
+  function rotateDay(param) {
+    if (param.innerText == "today's") {
+      param.innerText = "tomorrow's";
+      document.getElementById("today").style.display = "none";
+      document.getElementById("tomorrow").style.display = "block";
+    }
+    else if (param.innerText == "tomorrow's"){
+      param.innerText = "yesterday's";
+      document.getElementById("yesterday").style.display = "block";
+      document.getElementById("tomorrow").style.display = "none";
+    }
+    else if (param.innerText == "yesterday's"){
+      param.innerText = "today's";
+      document.getElementById("today").style.display = "block";
+      document.getElementById("yesterday").style.display = "none";
+    }
+  }
+    
+</script>
+
+
+<body>
+<main>
+  <div class="sidenav">
+    <a href="/menu/commons">commons</a>
+    <a href="/menu/sage">sage</a>
+    <a href="/menu/blitman">blitman</a>
+    <a href="/menu/barh">barh</a>
+    
+  </div>
+  <div class="main">
+      <h1 class="title"><a onClick="rotateDay(this)" class="day">today's</a> menu</h1>
+      <div id="today">
+        <p><%-menu.today%></p>
+        <% Object.keys(menu[menu.today]).forEach(function(course) { %>
+            <%- include('../partials/meal', {name:course, courses:menu[menu.yesterday][course]}); %>
+        <% }); %>  
+      </div>
+      <div id="tomorrow" style="display:none">
+        <p><%-menu.tomorrow%></p>
+        <% Object.keys(menu[menu.tomorrow]).forEach(function(course) { %>
+            <%- include('../partials/meal', {name:course, courses:menu[menu.yesterday][course]}); %>
+        <% }); %>  
+      </div>
+      <div id="yesterday" style="display:none">
+        <p><%-menu.yesterday%></p>
+        <% Object.keys(menu[menu.yesterday]).forEach(function(course) { %>
+            <%- include('../partials/meal', {name:course, courses:menu[menu.yesterday][course]}); %>
+        <% }); %>  
+      </div>
+  </div>
+</main>
+</body>
+
+</html>
