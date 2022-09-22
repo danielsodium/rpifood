@@ -1,3 +1,4 @@
+const serverless = require('serverless-http');
 const fs = require('fs');
 const express = require('express');
 const { Console } = require('console');
@@ -6,11 +7,12 @@ const app = express();
 const useragent = require('express-useragent');
 const axios = require('axios');
 
+
 app.set('view engine', 'ejs');
 app.use(express.static(__dirname + '/css/'));
 app.use(useragent.express());
 
-const port = 3000;
+const port = 80;
 
 halls = {};
 
