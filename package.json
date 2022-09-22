@@ -13,7 +13,6 @@
     "ejs": "^3.1.8",
     "express": "^4.18.1",
     "express-useragent": "^1.0.15",
-    "follow-redirects": "^1.15.2",
-    "serverless-http": "^3.0.2"
+    "follow-redirects": "^1.15.2"
   }
 }

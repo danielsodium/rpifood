@@ -1,4 +1,3 @@
-const serverless = require('serverless-http');
 const fs = require('fs');
 const express = require('express');
 const { Console } = require('console');
