@@ -42,6 +42,7 @@ function sortData(hall) {
 }
 
 app.get('/', (req, res) => {
+  console.log("FOUND!")
   res.redirect('/menu/commons')
 })
 
