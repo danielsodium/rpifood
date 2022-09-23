@@ -33,7 +33,7 @@
       document.getElementById("yesterday").style.display = "none";
     }
   }
-    
+      
 </script>
 
 
@@ -51,13 +51,13 @@
       <div id="today">
         <p><%-menu.today%></p>
         <% Object.keys(menu[menu.today]).forEach(function(course) { %>
-            <%- include('../partials/meal', {name:course, courses:menu[menu.yesterday][course]}); %>
+            <%- include('../partials/meal', {name:course, courses:menu[menu.today][course]}); %>
         <% }); %>  
       </div>
       <div id="tomorrow" style="display:none">
         <p><%-menu.tomorrow%></p>
         <% Object.keys(menu[menu.tomorrow]).forEach(function(course) { %>
-            <%- include('../partials/meal', {name:course, courses:menu[menu.yesterday][course]}); %>
+            <%- include('../partials/meal', {name:course, courses:menu[menu.tomorrow][course]}); %>
         <% }); %>  
       </div>
       <div id="yesterday" style="display:none">

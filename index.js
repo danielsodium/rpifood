@@ -62,10 +62,10 @@ function getData(callback) {
   let month = ('0' + (date.getMonth() + 1)).slice(-2);
 
   if (date.getDate() + 8 > daysInThisMonth()) {
-      plusNine = date.getDate() + 8 - daysInThisMonth();
+      plusNine = ('0' + (date.getDate() + 8 - daysInThisMonth())).slice(-2);
       plusNineM = ('0' + (date.getMonth() + 2)).slice(-2);
   } else {
-      plusNine = date.getDate() + 8;
+      plusNine = ('0' + (date.getDate() + 8)).slice(-2);
       plusNineM = month;
   }
   link = `/renderedmenu/1/${year}/${date.getMonth() + 1}/${date.getDate() - 1}/bite9daymenu/76929001/nomenuid-False-${year}-${month}-${day}-${year}-${plusNineM}-${plusNine}-en-US-auth-3.json`;
@@ -124,7 +124,7 @@ app.get('/menu/:hall', (req, res) => {
 
   let date = new Date();
   if (date.getDate() != halls.updated) update();
-  
+
   switch (req.params.hall) {
     case ("commons"):
       hallID = "COMMONS DINING HALL";

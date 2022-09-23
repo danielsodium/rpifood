@@ -43,7 +43,7 @@
   <div class="mobile-main">
       <h1 class="title"><a onClick="rotateDay(this)" class="day">today's</a> menu</h1>
       <div id="today">
-        <p><%-menu.today%></p>
+        <p><%-menu.today%></p>w
         <% Object.keys(menu[menu.today]).forEach(function(course) { %>
             <%- include('../partials/meal', {name:course, courses:menu[menu.yesterday][course]}); %>
         <% }); %>  
