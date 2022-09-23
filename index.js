@@ -11,7 +11,7 @@ app.set('view engine', 'ejs');
 app.use(express.static(__dirname + '/css/'));
 app.use(useragent.express());
 
-const port = 80;
+const port = process.env.PORT || 80;
 
 halls = {};
 
